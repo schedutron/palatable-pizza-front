@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Pizza Margherita Bufalina",
+    "description": "Tomatoes | Mozzarella Bufala Campana DOP Basil | Extra virgin olive oil | Gold Frantoio Romano (Campania)",
+    "price": "9.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-margherita-bufalina.jpg?alt=media&token=00ff3e0e-3e01-45ae-a2cf-e4a9092bd90d"
+  },
+  {
+    "name": "Nice pizza »vegetarian«",
+    "description": "tomatoes | Oven-baked vegetables of paprika, aubergine and zucchini Oregano Mozzarella di Bufala Campana DOP",
+    "price": "10.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/nice-pizza.jpeg?alt=media&token=f31a52b3-3899-4e82-9bea-10a2be378eac"
+  },
+  {
+    "name": "Pizza Rocky Balboa's Bacon",
+    "description": "Provolone | Pear | South Tyrolean Bacon Rucola | caramelized walnuts",
+    "price": "12.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-rocky.jpg?alt=media&token=6c264ff8-81aa-4c9c-9c8c-3be95050aed7"
+  },
+  {
+    "name": "Pizza Popeye Pie »vegetarian«",
+    "description": "Styrian mountain cheese | Fior di latte mozzarella | Baby spinach | Garlic pepper Hennes Finest",
+    "price": "9.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-popey-pie-2.jpg?alt=media&token=84dc5365-2974-4dbc-8cc3-554f1541da9b"
+  },
+  {
+    "name": "Pizza Salame",
+    "description": "Tomatoes | Fior di Latte Mozzarella\nTuscan fennel salami",
+    "price": "9.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-salame.jpg?alt=media&token=fbbebef3-dd8f-436a-b6f0-fb66948ce5ec"
+  },
+  {
+    "name": "Pizza Marinara De Luxe »vegan«",
+    "description": "Tomatoes | Oregano | Garlic Cherry Tomatoes | Capperi di Pantelleria IGP (capers)",
+    "price": "7.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-marinara-delux.jpg?alt=media&token=71ccf4f3-a2a7-42f7-8d58-361ec4570422"
+  },
+  {
+    "name": "Pizza Mr. Burns (it's HOT!)",
+    "description": "Tomatoes | Fior di Latte Mozzarella\nNduja (Calabrian sausage) | Red onions peppers",
+    "price": "12.00",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-mr-burns.jpg?alt=media&token=f7dc786c-c76e-4586-89a3-d04d446627d3"
+  },
+  {
+    "name": "Pizza Holy Guacamole »vegan«",
+    "description": "avocado-basil-guacamole | Rocket\ncumin | Kalamata Olives Cherry Tomatoes | Sweet potato chips",
+    "price": "11.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-holy-guaca.jpg?alt=media&token=f604b2f2-59b6-4cb7-83ea-04a1e19e8774"
+  },
+  {
+    "name": "Pizza Carpaccio",
+    "description": "Fontina d'Aosta | Fior di Latte Mozzarella | Black Angus Carpaccio | Arugula\nParmesan 24 DOP",
+    "price": "13.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-carpaccio.jpg?alt=media&token=d4825554-f75b-4bec-b6c9-ea4bb7dac7aa"
+  },
+  {
+    "name": "Pizza Margherita »vegetarian«",
+    "description": "tomatoes | Fior di Latte mozzarella\nbasil | Extra virgin olive oil | Gold Frantoio Romano (Campania)",
+    "price": "8.50",
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/crwn-db-5225d.appspot.com/o/pizza-margerita-veg.jpg?alt=media&token=e1793427-44ba-4273-96b5-d466a81e4ed2"
+  }
+]
