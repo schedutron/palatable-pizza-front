@@ -1,5 +1,6 @@
 import React from 'react';
 import './menu-item.styles.scss';
+import CustomButton from '../custom-button/custom-button.component';
 
 const MenuItem = ({name, imgLink, price, description, size}) => (
 
@@ -19,9 +20,7 @@ const MenuItem = ({name, imgLink, price, description, size}) => (
       <span className='name'>{name}</span>
       <span className='price'>{`€${price}`}</span>
     </div>
-    {/*
-      <CustomButton inverted>Add to Cart</CustomButton>
-    */}
+    <CustomButton inverted>Add to Cart</CustomButton>
     
   </div>
 )
