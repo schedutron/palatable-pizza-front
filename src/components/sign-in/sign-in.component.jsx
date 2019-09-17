@@ -26,6 +26,9 @@ class SignIn extends React.Component {
       await auth.signInWithEmailAndPassword(email, password);
       this.setState({ email: '', password: '' });
     } catch (error) {
+      if (error.code && (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password')) {
+        alert("Invalid email / password. Please retry or sign in with Google / sign up.");
+      }
       console.log(error);
     }
   };

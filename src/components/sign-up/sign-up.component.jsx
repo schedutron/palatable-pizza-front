@@ -20,19 +20,17 @@ class SignUp extends React.Component {
     event.preventDefault();
 
     const { displayName, email, password, confirmPassword } = this.state;
-
     if (password !== confirmPassword) {
       alert("passwords don't match");
       return;
     }
 
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(
+      await auth.createUserWithEmailAndPassword(
         email,
         password
       );
-
-      await createUserProfileDocument(user, { displayName });
+      await createUserProfileDocument({displayName, email});
 
       this.setState({
         displayName: '',
@@ -40,8 +38,12 @@ class SignUp extends React.Component {
         password: '',
         confirmPassword: ''
       });
+      alert("Signed up successfully! Now sign in to order!");
     } catch (error) {
-      console.error(error);
+      if (error.code) {
+        alert(error.message);
+      }
+      console.log(error);
     }
   };
 

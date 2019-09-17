@@ -14,29 +14,29 @@ const config = {
 
 firebase.initializeApp(config);
 
-export const createUserProfileDocument = async (userAuth, additionalData) => {
+export const createUserProfileDocument = async (userAuth) => {
   if (!userAuth) return;
+  console.log(userAuth);
+  const response = await fetch(`http://localhost:8000/api/users/${userAuth.email}`, {
+    method: 'GET'
+  });
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
-
-  const snapShot = await userRef.get();
-
-  if (!snapShot.exists) {
-    const { displayName, email } = userAuth;
-    const createdAt = new Date();
-    try {
-      await userRef.set({
-        displayName,
-        email,
-        createdAt,
-        ...additionalData
-      });
-    } catch (error) {
-      console.log('error creating user', error.message);
-    }
+  if (response.status === 404) {
+    const newUserResp = await fetch(`http://localhost:8000/api/users`, {
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json',
+      },
+      body: JSON.stringify({
+        display_name: userAuth.displayName,
+        email: userAuth.email
+      })
+    });
+    const newUserBody = await newUserResp.json();
+    return newUserBody.data;
   }
-
-  return userRef;
+  const existingUserBody = await response.json();
+  return existingUserBody.data;
 };
 
 export const auth = firebase.auth();
