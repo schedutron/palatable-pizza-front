@@ -1,22 +1,31 @@
 import React from 'react';
 import './directory.styles.scss';
 import MenuItem from '../menu-item/menu-item.component';
-import items from '../../menu.json';
 
 class Directory extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      sections: items
+      menu: []
     }
+  }
+
+  componentDidMount = async () => {
+    const pizzas = await fetch('http://localhost:8000/api/pizzas', {
+      method: 'GET'
+    });
+    console.log(pizzas);
+    this.setState({
+      menu: await pizzas.json()
+    });
   }
 
   render() {
     return (
       <div className='directory-menu'>
         {
-          this.state.sections.map(({id, ...otherProps}) => (
+          this.state.menu.map(({id, ...otherProps}) => (
             <MenuItem key={id} {...otherProps} />
           ))
         }

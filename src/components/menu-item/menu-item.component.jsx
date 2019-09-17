@@ -2,14 +2,14 @@ import React from 'react';
 import './menu-item.styles.scss';
 import CustomButton from '../custom-button/custom-button.component';
 
-const MenuItem = ({name, imgLink, price, description, size}) => (
+const MenuItem = ({name, image_link, price, description, size}) => (
 
-  <div className={`${size} menu-item`}>
+  <div className={`${size ? size : ''} menu-item`}>
     <div className='item-body'>
       <div
         className='background-image'
         style={{
-          backgroundImage: `url(${imgLink})`
+          backgroundImage: `url(${image_link})`
         }}
       />
       <p className='content'>
