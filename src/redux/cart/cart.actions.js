@@ -18,3 +18,8 @@ export const removeItem = item => ({
   type: CartActionTypes.REMOVE_ITEM,
   payload: item
 });
+
+export const setOrderID = orderID => ({
+  type: CartActionTypes.SET_ORDER_ID,
+  payload: orderID
+});

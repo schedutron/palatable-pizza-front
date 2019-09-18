@@ -18,12 +18,14 @@ class App extends React.Component {
     const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
-        if (userAuth.displayName) {  // so that following doesn't execute in case of user registration
-                                     // when displayName of userAuth is null
-          const user = await createUserProfileDocument(userAuth);
-          console.log(user);
-          setCurrentUser(user);
+        const user = await createUserProfileDocument(userAuth);
+        if (!user.address) {  // because api returns null if no address found, not empty string
+          user.address = '';
         }
+        if (user.phone_number === 0) {  // similar reasons here
+          user.phone_number = '';
+        }
+        setCurrentUser(user);
       } else {
         setCurrentUser(userAuth);
       }

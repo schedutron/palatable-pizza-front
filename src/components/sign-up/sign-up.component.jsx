@@ -38,7 +38,7 @@ class SignUp extends React.Component {
         password: '',
         confirmPassword: ''
       });
-      alert("Signed up successfully! Now sign in to order!");
+      alert("Signed up successfully!");
     } catch (error) {
       if (error.code) {
         alert(error.message);
