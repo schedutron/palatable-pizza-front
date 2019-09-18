@@ -1,0 +1,23 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+
+  .title {
+    font-size: 56px;
+  }
+
+  .footer {
+    width:105%;
+    height: 12vw;
+    overflow: hidden;
+
+    .footer-img {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

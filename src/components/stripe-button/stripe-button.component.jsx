@@ -36,7 +36,7 @@ const StripeCheckoutButton = ({price, onOpened, history, emptyCart}) => {
   return (
     <StripeCheckout
       label='Pay Now'
-      name='Palatable Pizza'
+      name='The Palatable Pizza'
       currency='EUR'
       image='https://svgshare.com/i/F0p.svg'
       description={`Your total is €${price}`}

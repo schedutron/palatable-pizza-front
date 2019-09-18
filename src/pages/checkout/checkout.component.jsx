@@ -81,8 +81,8 @@ class CheckoutPage extends React.Component {
         </div>
 
         <div className='delivery-info'>
-          Delivery info
-          <form onSubmit={this.handleSubmit}>
+          <span className='title'>Delivery info</span>
+          <form className='contact' onSubmit={this.handleSubmit}>
             <FormInput
               name='address'
               label='Address'
