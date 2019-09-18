@@ -9,16 +9,16 @@ import {setOrderID} from '../../redux/cart/cart.actions';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import FormInput from '../../components/form-input/form-input.component';
-import CustomButton from '../../components/custom-button/custom-button.component';
+
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+import { API_HOST } from '../../env';
 
 class CheckoutPage extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  handleSubmit = async event => {
-    event.preventDefault();
-
+  postOrderData = async () => {
     const {currentUser, cartItems, cartTotal, orderID, dispatch} = this.props;
     const payload = {
       user: currentUser,
@@ -28,9 +28,8 @@ class CheckoutPage extends React.Component {
         orderID
       }
     };
-    console.log("payload", JSON.stringify(payload));
 
-    const response = await fetch('http://localhost:8000/api/orders', {
+    const response = await fetch(`${API_HOST}/api/orders`, {
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
@@ -99,8 +98,8 @@ class CheckoutPage extends React.Component {
               value={currentUser ? currentUser.phone_number : ''}
               required
             />
-            <CustomButton type='submit'> Proceed to Payment </CustomButton>
           </form>
+          <StripeCheckoutButton onOpened={this.postOrderData} price={cartTotal} />
         </div>
       </div>
     );

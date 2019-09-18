@@ -1,6 +1,7 @@
 import React from 'react';
 import './directory.styles.scss';
 import MenuItem from '../menu-item/menu-item.component';
+import {API_HOST} from '../../env';
 
 class Directory extends React.Component {
   constructor() {
@@ -12,7 +13,7 @@ class Directory extends React.Component {
   }
 
   componentDidMount = async () => {
-    const pizzas = await fetch('http://localhost:8000/api/pizzas', {
+    const pizzas = await fetch(`${API_HOST}/api/pizzas`, {
       method: 'GET'
     });
     console.log(pizzas);

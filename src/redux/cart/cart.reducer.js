@@ -34,6 +34,8 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         ...state,
         orderID: action.payload
       }
+    case CartActionTypes.EMPTY_CART:
+      return INITIAL_STATE;
     default:
       return state;
   }

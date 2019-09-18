@@ -23,3 +23,7 @@ export const setOrderID = orderID => ({
   type: CartActionTypes.SET_ORDER_ID,
   payload: orderID
 });
+
+export const emptyCart = () => ({
+  type: CartActionTypes.EMPTY_CART,
+});

@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import {API_HOST} from '../env';
 
 const config = {
   apiKey: "AIzaSyAqrMBxbK-1ByBNoJhi-G1KLdLo0bpZAQY",
@@ -17,12 +18,12 @@ firebase.initializeApp(config);
 export const createUserProfileDocument = async (userAuth) => {
   if (!userAuth) return;
   console.log(userAuth);
-  const response = await fetch(`http://localhost:8000/api/users/${userAuth.email}`, {
+  const response = await fetch(`${API_HOST}/api/users/${userAuth.email}`, {
     method: 'GET'
   });
 
   if (response.status === 404) {
-    const newUserResp = await fetch(`http://localhost:8000/api/users`, {
+    const newUserResp = await fetch(`${API_HOST}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
