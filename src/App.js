@@ -20,7 +20,7 @@ class App extends React.Component {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const user = await createUserProfileDocument(userAuth);
-        if (!user.address) {  // because api returns null if no address found, not empty string
+        if (user.address === null) {  // because api returns null if no address found, not empty string
           user.address = '';
         }
         if (user.phone_number === 0) {  // similar reasons here

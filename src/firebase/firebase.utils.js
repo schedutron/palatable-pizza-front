@@ -17,21 +17,21 @@ firebase.initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth) => {
   if (!userAuth) return;
-  console.log(userAuth);
   const response = await fetch(`${API_HOST}/api/users/${userAuth.email}`, {
     method: 'GET'
   });
 
   if (response.status === 404) {
+    const body = JSON.stringify({
+      display_name: userAuth.displayName,
+      email: userAuth.email
+    });
     const newUserResp = await fetch(`${API_HOST}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
       },
-      body: JSON.stringify({
-        display_name: userAuth.displayName,
-        email: userAuth.email
-      })
+      body
     });
     const newUserBody = await newUserResp.json();
     return newUserBody.data;

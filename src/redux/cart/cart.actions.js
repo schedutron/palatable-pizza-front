@@ -19,9 +19,9 @@ export const removeItem = item => ({
   payload: item
 });
 
-export const setOrderID = orderID => ({
+export const setOrderID = id => ({
   type: CartActionTypes.SET_ORDER_ID,
-  payload: orderID
+  payload: id
 });
 
 export const emptyCart = () => ({

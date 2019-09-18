@@ -14,10 +14,6 @@ import StripeCheckoutButton from '../../components/stripe-button/stripe-button.c
 import { API_HOST } from '../../env';
 
 class CheckoutPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   postOrderData = async () => {
     const {currentUser, cartItems, cartTotal, orderID, dispatch} = this.props;
     const payload = {
@@ -39,7 +35,6 @@ class CheckoutPage extends React.Component {
 
     const body = await response.json();
     dispatch(setOrderID(body.cart.orderID));
-    console.log(body);
   }
 
   handleChange = (event) => {
@@ -52,7 +47,6 @@ class CheckoutPage extends React.Component {
 
   render() {
     const {cartItems, cartTotal, currentUser} = this.props;
-    console.log("currentUser", currentUser);
     return (
       <div className='checkout-page'>
         <div className='checkout-header'>

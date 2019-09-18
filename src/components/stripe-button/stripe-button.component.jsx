@@ -14,7 +14,6 @@ const StripeCheckoutButton = ({price, onOpened, history, emptyCart}) => {
 
   const onToken = async token => {
     const orderID = store.getState().cart.orderID; // accessing ID directly
-    console.log(token);
     const payload = {
       orderID,
       stripeToken: token.id

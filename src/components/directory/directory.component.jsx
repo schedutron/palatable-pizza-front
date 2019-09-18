@@ -16,7 +16,7 @@ class Directory extends React.Component {
     const pizzas = await fetch(`${API_HOST}/api/pizzas`, {
       method: 'GET'
     });
-    console.log(pizzas);
+
     this.setState({
       menu: await pizzas.json()
     });
